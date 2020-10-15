@@ -44,6 +44,26 @@ $ gcloud deployment-manager deployments create a-single-vm-with-template --templ
 $ gcloud deployment-manager deployments delete <deployment-name>
 ```
 
+### Access control
+
+```sh
+$ gcloud deployment-manager deployments create pubsub-access-control --template examples/v2/access_control/access_control.jinja --preview
+```
+
+### Mongo
+```sh
+$ gcloud deployment-manager deployments create hello-deployment-manager-mongo --template examples/v2/mongo/mongo.jinja --preview
+```
+
+### Cloud Function
+
+https://github.com/GoogleCloudPlatform/deploymentmanager-samples/tree/master/google/resource-snippets/cloudfunctions-v1
+
+```sh
+$ gcloud deployment-manager deployments create hello-deployment-manager-cloud-functions --template examples/v2/cloud_function/cloud_functions.jinja --preview --properties region:ap-northeast,entryPoint:dummy-entrypoint,runtime:python3.8
+```
+
+
 
 ## gcloud deployment-manager command
 
@@ -62,3 +82,4 @@ $ gcloud deployment-manager deployments create a-single-vm-with-template --templ
 NAME                          TYPE            STATE       ERRORS  INTENT
 vm-a-single-vm-with-template  compute.v1.instance  IN_PREVIEW  []      CREATE_OR_ACQUIRE
 ```
+

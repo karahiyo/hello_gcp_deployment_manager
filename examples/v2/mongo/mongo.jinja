@@ -1,0 +1,10 @@
+{% set MASTER = env["name"] + "-" + env["deployment"] + "-mongodb" %}
+resources:
+- name: {{ MASTER }}
+  type: instance
+  ...
+outputs:
+- name: databaseIp
+  value: $(ref.{{ MASTER }}.network[0].ip)  # Treated as a string during expansion
+- name: databasePort
+  value: 88
