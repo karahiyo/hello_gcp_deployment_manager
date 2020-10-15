@@ -43,3 +43,22 @@ $ gcloud deployment-manager deployments create a-single-vm-with-template --templ
 ```sh
 $ gcloud deployment-manager deployments delete <deployment-name>
 ```
+
+
+## gcloud deployment-manager command
+
+### list tyes
+
+```
+$ gcloud deployment-manager types list
+```
+
+### preview
+
+```sh
+$ gcloud deployment-manager deployments create a-single-vm-with-template --template examples/v2/build_configuration/add_templates/jinja/vm-template.jinja --properties zone:us-central1-a --preview
+...
+
+NAME                          TYPE            STATE       ERRORS  INTENT
+vm-a-single-vm-with-template  compute.v1.instance  IN_PREVIEW  []      CREATE_OR_ACQUIRE
+```
