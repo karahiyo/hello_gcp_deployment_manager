@@ -28,12 +28,18 @@ DESCRIPTION
 
 ### Create vm
 
-```
-gcloud deployment-manager deployments create quickstart-deployment --config examples/v2/quick_start/vm.yaml
+```sh
+$ gcloud deployment-manager deployments create quickstart-deployment --config examples/v2/quick_start/vm.yaml
 ```
 
 ### Create vm with template
 
+```sh
+$ gcloud deployment-manager deployments create a-single-vm-with-template --template examples/v2/build_configuration/add_templates/jinja/vm-template.jinja --properties zone:us-central1-a
 ```
-gcloud deployment-manager deployments create a-single-vm-with-template --template examples/v2/build_configuration/add_templates/jinja/vm-template.jinja --properties zone:us-central1-a
+
+### Delete deployment
+
+```sh
+$ gcloud deployment-manager deployments delete <deployment-name>
 ```
